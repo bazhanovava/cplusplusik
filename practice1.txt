@@ -1,0 +1,83 @@
+1________________
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int a,b;
+    float r;
+    char c;
+    cout<<"chislo 1= ";
+    cin>>a;
+    cout<<"chislo 2= ";
+    cin>>b;
+    cout<<"opperacia ";
+    cin>>c;
+    if (c=='+')
+    {
+        r=a+b;
+        cout<<"resultat= "<<r;
+    }
+    if (c=='-')
+    {
+        r=a-b;
+        cout<<"resultat= "<<r;
+    }
+    if (c=='*')
+    {
+        r=a*b;
+        cout<<"resultat= "<<r;
+    }
+    if (c=='/')
+    {
+        r=a*(1./b);
+        cout<<"resultat= "<<r;
+    }
+}
+
+2_______________________
+
+#include <iostream>
+#include <windows.h>
+
+using namespace std;
+
+int main()
+{
+    int n;
+    cout<<"vvedite chislo ";
+    cin>>n;
+    while (n>0)
+    {
+        cout<<n;
+        Sleep(1000);
+        n=n-1;
+    }
+}
+
+3______________________
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int a;
+    cout<<"kolvo yablochek ";
+    cin>>a;
+    if(a>10 && a<21)
+        cout<<a<<" yablok";
+    if(a>20 || (a<11 && a>-1))
+    {
+    if(a%10==0 || (a%10>4 && a%10<=9))
+        cout<<a<<" yablok";
+    if(a%10==1)
+        cout<<a<<" yabloko";
+    if(a%10>1 && a%10<5)
+        cout<<a<<" yabloka";
+    }
+    return 0;
+}
