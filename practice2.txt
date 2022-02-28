@@ -1,0 +1,58 @@
+задание 1_________________________
+
+#include <iostream>
+
+int main() {
+    std::cout << "Hello, World!" << std::endl;
+    return 0;
+}
+
+задание 3_________________________
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout <<"vvedite dv chislo";
+    int a;
+    cin >> a;
+    int b;
+    b = 0;
+    int c;
+    c = 0;
+    int m;
+    m = 1;
+    while (a > 0) {
+        b = a % 10;
+        c += b * m;
+        m *= 2;
+        a = a / 10;
+    }
+    cout << c << endl;
+    return 0;
+}
+
+задание 4_________________________
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout <<"vvedite des chislo";
+    int a;
+    cin >> a;
+    int b;
+    b = 0;
+    int c;
+    c = 0;
+    int m;
+    m = 1;
+    while (a > 0) {
+        b = a % 2;
+        c += b * m;
+        m *= 10;
+        a = a / 2;
+    }
+    cout << c << endl;
+    return 0;
+}
