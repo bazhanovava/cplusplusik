@@ -1,0 +1,117 @@
+задача 1__________________________
+
+#include <iostream>
+
+using namespace std;
+int selection_sort(int arr[], const int size)
+    {
+        for(int i=0;i<size-1;i++)
+        {
+        int minj=i;
+        for(int j=i+1; j<size; j++)
+        if(arr[j]<arr[minj])
+            minj=j;
+        swap(arr[minj],arr[i]);
+        }
+    }
+
+
+int main()
+{
+    int *arr;
+    int l;
+    cout << "vvedite razmer ";
+    cin >> l;
+    cout << "vvedite chisla";
+    arr=new int[l];
+    for(int i=0; i<l; i++)
+        cin >> arr[i];
+
+    selection_sort(arr,l);
+    cout << "sort array "<< endl;
+    for (int i=0; i<l; i++)
+        cout << arr[i]<<" ";
+    return 0;
+}
+
+
+
+задача 2_________________________
+
+#include <iostream>
+
+using namespace std;
+int bubble_sort(int arr[], const int size)
+    {
+        for (int i = 0; i < size - 1; i++) {
+            for (int j = 0; j < size - i - 1; j++) {
+                int vs;
+                if (arr[j] > arr[j + 1])
+            {
+        vs = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = vs;
+            }
+            }
+        }
+    }
+
+
+int main()
+{
+    int *arr;
+    int l;
+    cout << "vvedite razmer ";
+    cin >> l;
+    cout << "vvedite chisla";
+    arr=new int[l];
+    for(int i=0; i<l; i++)
+        cin >> arr[i];
+
+    bubble_sort(arr,l);
+    cout << "sort array "<< endl;
+    for (int i=0; i<l; i++)
+        cout << arr[i]<<" ";
+    return 0;
+}
+
+
+задача 3__________________________
+
+#include <iostream>
+using namespace std;
+
+void insertion_sort(int arr[], const int n)
+{
+    int a = 0;
+    int j = 0;
+    for (int i = 1; i < n; i++)
+    {
+        a = arr[i];
+        j = i - 1;
+        while (j >= 0 && arr[j] > a)
+        {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = a;
+    }
+}
+
+int main()
+{
+    int *arr;
+    int l;
+    cout << "vvedite razmer ";
+    cin >> l;
+    cout << "vvedite chisla";
+    arr=new int[l];
+    for(int i=0; i<l; i++)
+        cin >> arr[i];
+
+    insertion_sort(arr, l);
+    cout << "sort array "<< endl;
+    for (int i=0; i<l; i++)
+        cout << arr[i]<<" ";
+    return 0;
+}
