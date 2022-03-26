@@ -1,0 +1,96 @@
+задача 1________________________
+
+#include <iostream>
+#include <ctime>
+using namespace std;
+int main()
+{
+    cout<<"your birth date\n";
+    int d,m,y;
+    cin >> d >> m>> y;
+    time_t now = time(0);
+    tm *ltm = localtime(&now);
+    int ny = 1900 + ltm->tm_year,nm=1 + ltm->tm_mon,nd = ltm->tm_mday;
+    int delta;
+   switch(nm){
+        case(3):
+            delta=28-d;
+            break;
+        case(5 or 7 or 10 or 12):
+            delta=30-d;
+            break;
+        default:
+            delta=31-d;
+    }
+    if(nm<m){
+        nm++;
+    }
+    if(nm-m<0){
+        nm+=11;
+        ny--;
+    }
+    if (nd-d<0){
+        nd+=d+delta;
+    }
+    cout<< ny-y <<" years "<< nm-m <<" months "<<nd-d<<" days";
+    return 0;
+}
+
+
+задача 2_________________________
+
+#include <iostream>
+#include <typeinfo>
+
+using namespace std;
+
+int main()
+{
+    float a, b;
+    char c;
+    try
+        {
+            cout<<"chislo 1= "<<endl;
+            cin>>a;
+            cout<<"chislo 2= "<<endl;
+            cin>> b;
+            cout<<"operacia "<<endl;
+            cin>> c;
+            if (cin.fail())
+        {
+        throw 1;
+        }
+        }
+        catch(int i)
+        {
+            cout << "enter a number, not a symbol" << endl;
+        }
+    if (c=='+')
+    {
+        cout<<"resultat= "<<a+b;
+    }
+    if (c=='-')
+    {
+        cout<<"resultat= "<<a-b;
+    }
+    if (c=='*')
+    {
+        cout<<"resultat= "<<a*b;
+    }
+    if (c=='/')
+    {
+      try
+        {
+            if (b == 0)
+            {
+                throw 2;
+            }
+            cout<<"resultat= "<<a*(1./b);
+        }
+        catch(int i)
+        {
+            cout << "do not divide by 0" << endl;
+        }
+    }
+    return 0;
+}
