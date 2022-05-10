@@ -1,0 +1,134 @@
+задание 1_________________________
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main(int argc, char* argv[])
+{
+    ofstream fout("C:\\Users\\The home\\CLionProjects\\untitled7\\cppstudio.txt");
+    fout << "postavte mnogo ballov,please";
+    fout.close();
+    system("pause");
+    return 0;
+}
+
+задание 2_________________________
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main(int argc, char* argv[])
+{
+    char buff[50];
+    ifstream fin("C:\\Users\\The home\\CLionProjects\\untitled7\\cppstudio.txt");
+    fin.getline(buff, 50);
+    fin.close();
+    cout << buff << endl;
+    system("pause");
+    return 0;
+}
+
+задание 3_________________________
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main(){
+    string line;
+    ifstream fin("C:\\Users\\The home\\CLionProjects\\untitled7\\cppstudio.txt");
+    getline(fin,line);
+    cout<<line;
+    fin.close();
+    return 0;
+}
+__________________________________
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    system("chcp 65001");
+
+    int n = 1000;
+
+    char* buffer = new char[n+1]; buffer[n]=0;
+    ifstream file("C:\\Users\\The home\\CLionProjects\\untitled7\\cppstudio.txt");
+
+    file.read(buffer,n);
+    cout << buffer;
+    file.close();
+
+    return 0;
+}
+
+задание 4__________________________
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main(){
+    system("chcp 65001");
+    ifstream fin("C:\\Users\\The home\\CLionProjects\\untitled7\\cppstudio.txt");
+    string buff;
+    while (!fin.eof())
+    {
+        fin>>buff;
+        cout<<buff<<' ';
+    }
+    cout<<endl;
+    cout<<"End of file";
+    fin.close();
+    return 0;
+}
+
+задание 5________________________
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+    string s;
+
+    ofstream object;
+    object.open("C:\\Users\\The home\\CLionProjects\\untitled7\\cppstudio.txt");
+    cout << "Enter your string: \n";
+    cin >> s;
+
+    object << s;
+
+    object.close();
+    return 0;
+}
+
+задание 6__________________________
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    system("chcp 65001");
+
+    string line;
+
+    ifstream fin("C:\\Users\\The home\\CLionProjects\\untitled7\\cppstudio.txt");
+
+    while(getline(fin, line))
+    {
+        cout << line << endl;
+    }
+
+    fin.seekg(0,ios_base::end);
+    cout << "File size in bytes: " << fin.tellg();
+
+    fin.close();
+
+    return 0;
+}
+
