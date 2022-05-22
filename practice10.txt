@@ -1,0 +1,98 @@
+задание 1_____________________________________________________
+
+#include <iostream>
+#include <vector>
+#include <list>
+using namespace std;
+
+class Classic{
+public:
+    string writer;
+    string book;
+    string shelf;
+
+    Classic(string w, string b, string s){
+        writer = w;
+        book = b;
+        shelf = s;
+
+    };
+};
+class F_literature: public Classic{
+public:
+    list<Classic*> section;
+    short rank;
+    F_literature(string w1, string b1, string s1) : Classic(w1, b1, s1) {
+        writer = w1;
+        book = b1;
+        shelf = s1;
+
+    };
+    F_literature& visit_card(){
+        cout << "Writer: " << writer << endl;
+        cout << "Book: " << book << endl;
+        cout << "shelf: " << shelf << endl;
+        cout << "Rank: " << rank << endl;
+    }
+};
+
+int main(){
+    F_literature Gamlet(  "Shakespear", "Gamlet","23");
+    Classic Oblomov ( "Goncharov", "Oblomov", "12");
+    Classic Dubrovsky( "Pushkin", "Dubrovsky", "8");
+
+    Gamlet.section.push_back(&Oblomov);
+    Gamlet.section.push_back(&Dubrovsky);
+    Classic* adress = &Oblomov;
+    Classic frt1 = *adress; // frt1 = *&frt
+    return 0;
+}
+
+задание 2_____________________________________________________
+
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+class Point{
+public:
+    int x, y, z;
+    Point(){
+        x = y = z = 0;
+    }
+    Point (int x, int y, int z){
+        this->x = x;
+        this->y = y;
+        this->z = z;
+    }
+    void Print (){
+        cout << "X:"<< x<< "Y:"<< y<< "Z:"<< z << endl;
+    }
+};
+int main (){
+    string path = "testing.txt";
+    Point point (10, 20, 50);
+    ofstream fout;
+    fout.open(path, ofstream::app);
+
+        fout.write((char *) &point, sizeof(Point));
+    fout.close();
+    return 0;
+}
+
+задание 3_____________________________________________________
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    const int n = ; 
+    int a[n] = {};
+    for (int i = 0; i < n; i++)
+
+    {
+        cout << *(a+i) << endl;
+    }
+    return 0;
+}
